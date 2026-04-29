@@ -1,168 +1,160 @@
 <!DOCTYPE html>
 <html lang="ar">
-
 <head>
-  <!-- إعدادات الصفحة -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BOLTX</title>
 
-  <!-- تنسيقات الموقع -->
   <style>
-  /* الصفحة */
-  body {
-    margin: 0;
-    background: #000;
-    color: #b000ff;
-    font-family: Arial, sans-serif;
-  }
+    body {
+      margin: 0;
+      background: #000;
+      color: #b000ff;
+      font-family: Arial, sans-serif;
+    }
 
-  /* الهيدر */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-
-  /* المحتوى الرئيسي */
-  .main {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 25px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  /* قسم البوستات */
-  .posts {
-    flex: 1;
-    max-width: 550px;
-    width: 100%;
-  }
-
-  /* كل بوست */
-  .post {
-    width: 100%;
-    background: #111;
-    border: 1px solid #b000ff;
-    border-radius: 15px;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    box-shadow: 0 0 12px rgba(176, 0, 255, 0.15);
-  }
-
-  /* صورة البوست */
-  .post img {
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 10px;
-  }
-
-  /* أزرار البوست */
-  .post-buttons {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-  }
-
-  /* الشات */
-  .chat {
-    width: 350px;
-    height: 560px;
-    border: 2px solid #b000ff;
-    border-radius: 20px;
-    padding: 15px;
-    background: #111;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-  }
-
-  /* صندوق البوست */
-  #postBox {
-    max-width: 550px;
-    margin: 20px auto;
-    padding: 20px;
-  }
-
-  /* الفوتر */
-  .footer {
-    margin-top: 30px;
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid #b000ff;
-  }
-
-  .footer a {
-    color: #b000ff;
-    margin: 10px;
-    text-decoration: none;
-  }
-
-  /* المدخلات */
-  input,
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: black;
-    color: #b000ff;
-    border: 1px solid #b000ff;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-
-  /* الأزرار */
-  button {
-    padding: 8px 15px;
-    background: #b000ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  button:hover {
-    opacity: 0.9;
-  }
-
-  /* موبايل */
-  @media (max-width: 768px) {
+    /* HEADER */
     .header {
-      justify-content: center;
-      text-align: center;
-    }
-
-    .main {
-      flex-direction: column;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      padding: 10px;
+      padding: 15px 20px;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
+    /* MAIN */
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 25px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* POSTS */
     .posts {
-      max-width: 100%;
-    }
-
-    .chat {
-      width: 100%;
+      flex: 1;
       max-width: 550px;
-      height: 450px;
+      width: 100%;
     }
 
+    .post {
+      width: 100%;
+      background: #111;
+      border: 1px solid #b000ff;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 0 12px rgba(176, 0, 255, 0.15);
+    }
+
+    .post img {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+
+    .post-buttons {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    /* CHAT */
+    .chat {
+      width: 350px;
+      height: 560px;
+      border: 2px solid #b000ff;
+      border-radius: 20px;
+      padding: 15px;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    /* POST BOX */
     #postBox {
+      max-width: 550px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 30px;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #b000ff;
+    }
+
+    .footer a {
+      color: #b000ff;
+      margin: 10px;
+      text-decoration: none;
+    }
+
+    /* INPUTS */
+    input,
+    textarea {
       width: 100%;
       padding: 10px;
+      margin-bottom: 10px;
+      background: black;
+      color: #b000ff;
+      border: 1px solid #b000ff;
+      border-radius: 5px;
+      box-sizing: border-box;
     }
-  }
-</style>
-</head>
 
+    /* BUTTON */
+    button {
+      padding: 8px 15px;
+      background: #b000ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .main {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .posts {
+        max-width: 100%;
+      }
+
+      .chat {
+        width: 100%;
+        max-width: 550px;
+        height: 450px;
+      }
+
+      #postBox {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
 <body>
 
   <!-- HEADER -->
@@ -194,19 +186,19 @@
   <!-- MAIN -->
   <div class="main">
 
-    <!-- POSTS SECTION -->
+    <!-- POSTS -->
     <div class="posts">
-      <h2>New</h2>
+      <h2 style="text-align:center;">New</h2>
       <div id="posts"></div>
     </div>
 
-    <!-- CHAT SECTION -->
+    <!-- CHAT -->
     <div class="chat">
       <h3 style="text-align:center;">Live Chat</h3>
 
       <div id="chatMessages" style="flex:1;overflow-y:auto;margin-bottom:10px;"></div>
 
-      <div style="display:flex;gap:10px;">
+      <div style="display:flex;gap:10px; margin-top:10px;">
         <input id="chatInput" placeholder="Send message...">
         <button onclick="sendMessage()">Send</button>
       </div>
@@ -222,13 +214,12 @@
   </div>
 
   <!-- POST BOX -->
-  <div id="postBox" style="display:none;max-width:550px;margin:20px auto;padding:20px;">
+  <div id="postBox" style="display:none;">
     <textarea id="postText" placeholder="Write post..."></textarea>
     <input type="file" id="postImage" accept="image/*">
     <button onclick="addPost()">POST</button>
   </div>
 
-  <!-- SCRIPT -->
   <script>
     let nickname = localStorage.getItem("nickname");
 
@@ -355,7 +346,7 @@
       });
     }
 
-    // SEND CHAT MESSAGE
+    // SEND CHAT
     function sendMessage() {
       if (!nickname) {
         alert("Login first");
