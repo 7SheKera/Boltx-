@@ -26,19 +26,16 @@
     /* MAIN */
     .main {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: flex-start;
-      gap: 25px;
+      gap: 20px;
       padding: 20px;
-      max-width: 1200px;
-      margin: auto;
     }
 
     /* POSTS */
     .posts {
       flex: 1;
-      max-width: 550px;
-      width: 100%;
+      max-width: 700px;
     }
 
     .post {
@@ -66,7 +63,7 @@
 
     /* CHAT */
     .chat {
-      width: 350px;
+      width: 360px;
       height: 560px;
       border: 2px solid #b000ff;
       border-radius: 20px;
@@ -79,8 +76,8 @@
 
     /* POST BOX */
     #postBox {
-      max-width: 550px;
-      margin: 20px auto;
+      max-width: 700px;
+      margin: 20px;
       padding: 20px;
     }
 
@@ -135,22 +132,21 @@
       .main {
         flex-direction: column;
         align-items: center;
-        padding: 10px;
       }
 
       .posts {
+        width: 100%;
         max-width: 100%;
       }
 
       .chat {
         width: 100%;
-        max-width: 550px;
         height: 450px;
       }
 
       #postBox {
         width: 100%;
-        padding: 10px;
+        margin: 10px;
       }
     }
   </style>
@@ -188,7 +184,7 @@
 
     <!-- POSTS -->
     <div class="posts">
-      <h2 style="text-align:center;">New</h2>
+      <h2>New</h2>
       <div id="posts"></div>
     </div>
 
@@ -198,7 +194,7 @@
 
       <div id="chatMessages" style="flex:1;overflow-y:auto;margin-bottom:10px;"></div>
 
-      <div style="display:flex;gap:10px; margin-top:10px;">
+      <div style="display:flex;gap:10px;">
         <input id="chatInput" placeholder="Send message...">
         <button onclick="sendMessage()">Send</button>
       </div>
@@ -223,7 +219,6 @@
   <script>
     let nickname = localStorage.getItem("nickname");
 
-    // USER DISPLAY
     if (nickname) {
       document.getElementById("userArea").innerHTML =
         "<div>" + nickname +
@@ -235,7 +230,6 @@
       location.reload();
     }
 
-    // NEW POST PASSWORD
     function checkPassword() {
       let password = prompt("Enter Password:");
       if (password === "2626101020112011boltx") {
@@ -243,14 +237,12 @@
       }
     }
 
-    // LOAD POSTS
     function loadPosts() {
       let posts = JSON.parse(localStorage.getItem("posts")) || [];
       let box = document.getElementById("posts");
       box.innerHTML = "";
 
       posts.forEach((post, index) => {
-
         let ownerButtons = "";
 
         if (post.owner === nickname) {
@@ -273,7 +265,6 @@
       });
     }
 
-    // ADD POST
     function addPost() {
       let text = document.getElementById("postText").value;
       let file = document.getElementById("postImage").files[0];
@@ -306,7 +297,6 @@
       document.getElementById("postBox").style.display = "none";
     }
 
-    // EDIT POST
     function editPost(index) {
       let posts = JSON.parse(localStorage.getItem("posts")) || [];
       let newText = prompt("Edit post:", posts[index].text);
@@ -318,7 +308,6 @@
       }
     }
 
-    // DELETE POST
     function deletePost(index) {
       let posts = JSON.parse(localStorage.getItem("posts")) || [];
       posts.splice(index, 1);
@@ -326,7 +315,6 @@
       loadPosts();
     }
 
-    // LOAD CHAT
     function loadChat() {
       let messages = JSON.parse(localStorage.getItem("chatMessages")) || [];
       let box = document.getElementById("chatMessages");
@@ -346,7 +334,6 @@
       });
     }
 
-    // SEND CHAT
     function sendMessage() {
       if (!nickname) {
         alert("Login first");
